@@ -6,8 +6,7 @@ header("Access-Control-Allow-Origin: *");
 $handle = new SQLite3("data.db");
 
 // Use a prepared statement with a parameterized query
-$stmt = $handle->prepare("SELECT * FROM :db");
-$stmt->bindValue(":db", "student", SQLITE3_TEXT);
+$stmt = $handle->prepare("SELECT * FROM student");
 $result = $stmt->execute();
 
 $data = [];
